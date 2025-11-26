@@ -1,0 +1,16 @@
+featue engineering
+winning_home/away_id
+win_perc - make function
+
+point differential vs win percentage (team + year)
+points scored? vs win percentage
+
+(one team) DEAL WITH TIES
+win percentage over time - running total
+yearly win percentage (pandas)
+rankings - stdev per year (ohio state/alabama)
+rankings - count of times team showed up in top 5 of ap poll (limit p5 conferences)
+
+
+
+put rankings in a json?
