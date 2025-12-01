@@ -35,6 +35,6 @@ or
 
 #### Calulations - Matthew
 - rankings - stdev per year (ohio state/alabama) **Done**
-- rankings - count of times team showed up in top 5 of ap poll (limit p5 conferences)
+- rankings - count of times team showed up in top 5 of ap poll (limit p5 conferences) **Done**
 
 #### Powerpoint - someone could start on it now
