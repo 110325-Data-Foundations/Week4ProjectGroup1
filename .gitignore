@@ -1,3 +1,2 @@
 .env
-processing/__pycache__/validation.cpython-314.pyc
-processing/__pycache__/process_sources.cpython-314.pyc
+__pycache__/
