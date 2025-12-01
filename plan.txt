@@ -11,6 +11,4 @@ yearly win percentage (pandas)
 rankings - stdev per year (ohio state/alabama)
 rankings - count of times team showed up in top 5 of ap poll (limit p5 conferences)
 
-
-
 put rankings in a json?
