@@ -33,7 +33,7 @@ or
 - win percentage over time - running total
 - yearly win percentage (pandas - we would feature engineer earlier)
 
-#### Calulations - Matthew
+#### Calulations and Visualizations - Matthew
 - rankings - stdev per year (ohio state/alabama) **Done**
 - rankings - count of times team showed up in top 5 of ap poll (limit p5 conferences) **Done**
 
