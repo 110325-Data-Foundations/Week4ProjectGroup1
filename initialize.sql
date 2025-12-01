@@ -27,7 +27,6 @@ CREATE TABLE IF NOT EXISTS games (
         foreign key (id_away_team)
         references Teams(team_id)
 );
-<<<<<<< HEAD
 
 CREATE TABLE yearly_team (
     year smallint not null,
@@ -45,5 +44,3 @@ CREATE TABLE yearly_team (
 );
 
 Select * from garbages limit 10
-=======
->>>>>>> main
