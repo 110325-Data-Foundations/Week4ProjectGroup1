@@ -1,11 +1,11 @@
-CREATE TABLE Teams(
+CREATE TABLE teams(
     team_id int primary key,
     full_name varchar(100),
     school_name varchar(100) not null,
     mascot varchar(100)
 );
 
-CREATE TABLE Games (
+CREATE TABLE games (
     game_id int primary key,
     year smallint,
     week smallint, 
@@ -28,4 +28,6 @@ CREATE TABLE Games (
         references Teams(team_id)
 );
 
-Select * from garbages limit 10
+Select * from garbages limit 10;
+
+-- CREATE DATABASE collegefootballdb;
