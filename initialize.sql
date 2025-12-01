@@ -28,6 +28,7 @@ CREATE TABLE games (
         references Teams(team_id)
 );
 
+-- Once writing_to_db.ipy is ran, run this line
 Select * from garbages limit 10;
 
 -- CREATE DATABASE collegefootballdb;
