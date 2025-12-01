@@ -1,11 +1,11 @@
-CREATE TABLE teams(
+CREATE TABLE IF NOT EXISTS teams(
     team_id int primary key,
     full_name varchar(100),
     school_name varchar(100) not null,
     mascot varchar(100)
 );
 
-CREATE TABLE games (
+CREATE TABLE IF NOT EXISTS games (
     game_id int primary key,
     year smallint,
     week smallint, 
@@ -27,8 +27,3 @@ CREATE TABLE games (
         foreign key (id_away_team)
         references Teams(team_id)
 );
-
--- Once writing_to_db.ipy is ran, run this line
-Select * from garbages limit 10;
-
--- CREATE DATABASE collegefootballdb;
