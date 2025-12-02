@@ -38,18 +38,18 @@ def build_tables(teams_df,games_df,invalid_df, engine):
     teams_df.to_sql(
         'teams',
         con=engine,
-        if_exists='replace',
+        if_exists='append',
         index=False
     )
     games_df.to_sql(
         "games",
         con=engine,
-        if_exists="replace",
+        if_exists="append",
         index=False,
     )
     invalid_df.to_sql(
         "garbages",
         con=engine,
-        if_exists="replace",
+        if_exists="append",
         index=False,
     )
