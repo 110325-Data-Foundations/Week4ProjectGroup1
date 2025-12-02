@@ -1,5 +1,5 @@
 import pandas as pd
-import process_sources as process
+from . import process_sources as process
 
 def build_teams_df(df):
     hometeams_df = df[[
@@ -34,33 +34,22 @@ def build_games_df(df):
     })
     return games_df
 
-def main():
-    sources = process.load_source()[1]
-    df = process.read_source(sources['CSV'])
-    invalid_df = process.read_source(sources['INVALID'])
-    teams_df = build_teams_df(df)
-    games_df = build_games_df(df)
-
-    with process.get_engine() as engine:
-        teams_df.to_sql(
-            'teams',
-            con=engine,
-            if_exists='append',
-            index=False
-        )
-        games_df.to_sql(
-            "games",
-            con=engine,
-            if_exists="append",
-            index=False,
-        )
-
-        invalid_df.to_sql(
-            "garbages",
-            con=engine,
-            if_exists="append",
-            index=False,
-        )
-
-if __name__ == "__main__":
-    main()
+def build_tables(teams_df,games_df,invalid_df, engine):
+    teams_df.to_sql(
+        'teams',
+        con=engine,
+        if_exists='append',
+        index=False
+    )
+    games_df.to_sql(
+        "games",
+        con=engine,
+        if_exists="append",
+        index=False,
+    )
+    invalid_df.to_sql(
+        "garbages",
+        con=engine,
+        if_exists="append",
+        index=False,
+    )
