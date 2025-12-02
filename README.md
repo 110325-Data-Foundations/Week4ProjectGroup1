@@ -4,10 +4,10 @@
 - Connect to database with Python and config - **Done**
 - Handling errors, continue with valid records
 - read data from CSV/JSON into PostgreSQL - **Done**
-- 80% of code is tested w/PyTest
+- 80% of code is tested w/PyTest **Done**
 - Close DB connections - **Done**
 - modular design - **Done**
-- parameterized queries - *Might not need to do*
+- parameterized queries - **Might not need to do**
 
 ### Part 2 - Data Analysis
 - 2 feature engineering examples
