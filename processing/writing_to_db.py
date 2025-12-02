@@ -1,0 +1,55 @@
+import pandas as pd
+from . import process_sources as process
+
+def build_teams_df(df):
+    hometeams_df = df[[
+        'id_home_team','home_team_full_name','home_team_school_name','home_team_mascot'
+    ]].rename(columns={
+        'id_home_team': 'team_id',
+        'home_team_full_name': 'full_name',
+        'home_team_school_name': 'school_name',
+        'home_team_mascot': 'mascot'
+    })
+
+    awayteams_df = df[[
+        'id_away_team','away_team_full_name','away_team_school_name','away_team_mascot'
+    ]].rename(columns={
+        'id_away_team': 'team_id',
+        'away_team_full_name': 'full_name',
+        'away_team_school_name': 'school_name',
+        'away_team_mascot': 'mascot'
+    })
+
+    teams_df = pd.concat([hometeams_df, awayteams_df], ignore_index=True)
+    teams_df = teams_df.drop_duplicates(subset=['team_id'])
+    return teams_df
+
+def build_games_df(df):
+    games_df = df[[
+        'id', 'year', 'week', 'postseason',
+        'id_home_team', 'id_away_team', 'points_home', 'points_away',
+        'completed', 'conference_game', 'home_team_ranking', 'away_team_ranking'
+    ]].rename(columns={
+        'id': 'game_id'
+    })
+    return games_df
+
+def build_tables(teams_df,games_df,invalid_df, engine):
+    teams_df.to_sql(
+        'teams',
+        con=engine,
+        if_exists='replace',
+        index=False
+    )
+    games_df.to_sql(
+        "games",
+        con=engine,
+        if_exists="replace",
+        index=False,
+    )
+    invalid_df.to_sql(
+        "garbages",
+        con=engine,
+        if_exists="replace",
+        index=False,
+    )
