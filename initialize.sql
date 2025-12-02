@@ -44,3 +44,4 @@ CREATE TABLE yearly_team (
 );
 
 Select * from garbages limit 10
+
