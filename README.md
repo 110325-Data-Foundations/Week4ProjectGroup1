@@ -4,15 +4,15 @@
 - Connect to database with Python and config - **Done**
 - Handling errors, continue with valid records
 - read data from CSV/JSON into PostgreSQL - **Done**
-- 80% of code is tested w/PyTest
+- 80% of code is tested w/PyTest **Done**
 - Close DB connections - **Done**
 - modular design - **Done**
-- parameterized queries - *Might not need to do*
+- parameterized queries - **Might not need to do**
 
 ### Part 2 - Data Analysis
 - 2 feature engineering examples
-- 1 correlation
-- 3 visualizations of derived data
+- 1 correlation **Done**
+- 3 visualizations of derived data ** Done**
 - Powerpoint
 
 ### To-do summary - and whose doing it
@@ -24,13 +24,13 @@
 - yearly win percentage
 
 #### Correlation - Sam
-- point differential vs win percentage (team + year)
+- point differential vs win percentage (team + year) **Done**
 or
 - win % and home (team + year)
 
 #### Visualisation - Sam
 (one team) DEAL WITH TIES
-- win percentage over time - running total
+- win percentage over time - running total **Done**
 - yearly win percentage (pandas - we would feature engineer earlier)
 
 #### Calulations and Visualizations - Matthew
