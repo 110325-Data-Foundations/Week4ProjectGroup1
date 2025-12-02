@@ -1,14 +1,5 @@
 import pandas as pd
-from dotenv import load_dotenv
-from sqlalchemy import create_engine
-import os
 import processing.process_sources as process
-
-
-load_dotenv()
-database_url = os.getenv('DATABASE_URL')
-
-engine = create_engine(database_url)
 
 def del_columns(df):
     del df['game_id']
@@ -22,7 +13,9 @@ def del_columns(df):
     del df['postseason']
     del df['conference_game']
 
-games_df = pd.read_sql_table('games', engine)
+with process.get_engine() as engine:
+    games_df = pd.read_sql_table('games', engine)
+    
 target_df = games_df.copy(deep=True)
 del_columns(target_df)
 target_df.rename(columns={'id_home_team': 'team_id'}, inplace=True)
