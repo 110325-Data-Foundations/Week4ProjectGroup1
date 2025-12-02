@@ -34,9 +34,9 @@ def test_main(monkeypatch):
     cd.vd.split_valid_invalid.assert_called_once_with(raw_df)
     cd.vd.clean_valid_df.assert_called_once_with(valid_df)
 
-    cleaned_df.to_csv.assert_called_once_with("./data/CLEANED.CSV", index=False)
-    cleaned_df.to_json.assert_called_once_with("./data/CLEANED.JSON", index=False)
-    invalid_df.to_csv.assert_called_once_with("./data/INVALID.CSV", index=False)
+    cleaned_df.to_csv.assert_called_once_with("./data/cleaned_cfb_data.CSV", index=False)
+    cleaned_df.to_json.assert_called_once_with("./data/cleaned_cfb_data.JSON", index=False)
+    invalid_df.to_csv.assert_called_once_with("./data/invalid_data.CSV", index=False)
 
     cd.wr.build_teams_df.assert_called_once_with(cleaned_df)
     cd.wr.build_games_df.assert_called_once_with(cleaned_df)
