@@ -43,7 +43,5 @@ CREATE TABLE yearly_team (
         references Teams(team_id)
 );
 
-Select * from yearly_team limit 10
-drop table games;
-drop table garbages;
-drop table teams;
+Select * from garbages limit 10
+
