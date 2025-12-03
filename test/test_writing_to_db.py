@@ -71,21 +71,21 @@ def test_build_tables_calls_to_sql_correctly():
     teams_df.to_sql.assert_called_once_with(
         "teams",
         con=engine,
-        if_exists="replace",
+        if_exists="append",
         index=False,
     )
 
     games_df.to_sql.assert_called_once_with(
         "games",
         con=engine,
-        if_exists="replace",
+        if_exists="append",
         index=False,
     )
 
     invalid_df.to_sql.assert_called_once_with(
         "garbages",
         con=engine,
-        if_exists="replace",
+        if_exists="append",
         index=False,
     )
 
