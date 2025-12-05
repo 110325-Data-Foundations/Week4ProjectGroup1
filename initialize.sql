@@ -49,6 +49,10 @@ CREATE TABLE teams_log (
     action VARCHAR(10) NOT NULL CHECK (action IN ('INSERT', 'UPDATE', 'DELETE')), 
     action_time TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     details TEXT
+
+    constraint fk_team
+        foreign key (team_id)
+        references Teams(team_id)
 );
 
 Select * from garbages limit 10
