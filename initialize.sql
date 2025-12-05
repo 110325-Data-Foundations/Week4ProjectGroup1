@@ -43,5 +43,13 @@ CREATE TABLE yearly_team (
         references Teams(team_id)
 );
 
+CREATE TABLE teams_log (
+    log_id SERIAL PRIMARY KEY,
+    team_id INTEGER NOT NULL,
+    action VARCHAR(10) NOT NULL CHECK (action IN ('INSERT', 'UPDATE', 'DELETE')), 
+    action_time TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    details TEXT
+);
+
 Select * from garbages limit 10
 
